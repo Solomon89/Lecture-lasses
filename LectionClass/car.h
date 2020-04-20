@@ -6,12 +6,20 @@ using namespace std;
 class car
 {
 public:
-	car(string Name, string Color, int MaxSpeed, int Acceleration);
-	~car();
+	static int  Number;
+	
+	car();
+	car(string Name, string Color, int MaxSpeed, int Acceleration, string carType);
+	
 	void Accelerate();
 	void GetCurrentSpeed();
-private:
-	void ShowSpeed(string addition);
+	virtual void ShowInfo(bool withEndl = true);
+	void ShowSpeed(string addition = "");
+	virtual void Brake(int varible = 0) = 0;
+	virtual car* getThisCar();
+	string getType();
+protected:
+	
 	string Color;
 	string Name;
 	int MaxSpeed;
@@ -19,5 +27,9 @@ private:
 	int Acceleration;
 	int CurrentSpeed;
 	bool isClacsonOn;
+private:
+	int currentSpeed();
+	string carType;
+	
 };
 

@@ -2,23 +2,28 @@
 #include <thread>
 #include <chrono>
 #include "car.h"
+#include "Rassing.h"
+#include "Passenger.h"
 
 
 using namespace std;
 
+int car::Number = 1;
+
 int main()
 {
 	setlocale(LC_ALL, "Rus");
-	car* ford = new car("ford mustang", "white", 300,50);
-	car ferrari =  car("ferrari La ferrari", "red", 310, 52);
-
-	for (int i = 0; i < 5; i++)
+	int const GarageLength = 3;
+	car ** cars = new car*[GarageLength];
+	cars[0] = new Rassing("װוננאנט LaFerrary", "Red", 300, 20, "װוננאנט");
+	cars[1] = new Passenger("Ford Focus", "White", 200, 15, 4);
+	cars[2] = new Passenger("Ford Focus","Black",200,15,2);
+	for (int i = 0; i < GarageLength; i++)
 	{
-		ford->Accelerate();
-		ferrari.Accelerate();
-		this_thread::sleep_for(chrono::milliseconds(800));
+		
+		cout << (*cars[i]->getThisCar()).getType() << endl;
+		delete cars[i];
 	}
-	delete ford;
-	cout << "Destructors" << endl;
+	delete cars;
 	return 0;
 }

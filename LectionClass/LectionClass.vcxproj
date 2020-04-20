@@ -140,9 +140,13 @@
   <ItemGroup>
     <ClCompile Include="car.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Passenger.cpp" />
+    <ClCompile Include="Rassing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="car.h" />
+    <ClInclude Include="Passenger.h" />
+    <ClInclude Include="Rassing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
